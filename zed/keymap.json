@@ -1,0 +1,56 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+    // Normal + Visual Mode Custom Bindings
+    {
+    "context": "VimControl && !menu",
+    "bindings": {
+        "alt-u": "editor::HalfPageUp",
+        "alt-i": "editor::HalfPageDown",
+        "alt-y": "editor::MoveToStartOfParagraph",
+        "alt-o": "editor::MoveToEndOfParagraph",
+        "alt-shift-y": "editor::SelectToStartOfParagraph",
+        "alt-shift-o": "editor::SelectToEndOfParagraph"
+        }
+    },
+    // global keybindings
+    {
+    "bindings": {
+        "alt-h": ["workspace::ActivatePaneInDirection", "Left"],
+        "alt-l": ["workspace::ActivatePaneInDirection", "Right"],
+        "alt-k": ["workspace::ActivatePaneInDirection", "Up"],
+        "alt-j": ["workspace::ActivatePaneInDirection", "Down"],
+        "cmd-b": "outline_panel::ToggleFocus",
+        "cmd-shift-e": "workspace::ToggleRightDock",
+        "cmd-e": "project_panel::ToggleFocus",
+        "cmd-;": "assistant::ToggleFocus",
+        "cmd-j": "terminal_panel::ToggleFocus",
+        "cmd-shift-j": "workspace::ToggleBottomDock",
+        "cmd-shift-b": "workspace::ToggleLeftDock"
+    }
+    },
+    {
+    "context": "Pane",
+    "bindings": {
+        "cmd-1": ["pane::ActivateItem", 0],
+        "cmd-2": ["pane::ActivateItem", 1],
+        "cmd-3": ["pane::ActivateItem", 2],
+        "cmd-4": ["pane::ActivateItem", 3],
+        "cmd-5": ["pane::ActivateItem", 4],
+        "cmd-6": ["pane::ActivateItem", 5],
+        "cmd-7": ["pane::ActivateItem", 6],
+        "cmd-8": ["pane::ActivateItem", 7],
+        "cmd-9": ["pane::ActivateItem", 8],
+        "cmd-0": "pane::ActivateLastItem",
+        "alt-shift-tab": "pane::ActivatePrevItem",
+        "alt-tab": "pane::ActivateNextItem",
+        "cmd-shift-t": "pane::ReopenClosedItem",
+        "cmd-shift-f": "project_search::ToggleFocus"
+      }
+    }
+]

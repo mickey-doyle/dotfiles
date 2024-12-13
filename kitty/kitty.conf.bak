@@ -1,0 +1,193 @@
+include cyberdream.conf
+shell /opt/homebrew/bin/fish
+
+###################################### fonts ######################################
+  font_family      family='ZedMono Nerd Font Mono' style='Extended Light'
+  bold_font        family='ZedMono Nerd Font Mono' style='Extended ExtraBold'
+  italic_font      family='ZedMono Nerd Font Mono' style='Extended Italic'
+  bold_italic_font family='ZedMono Nerd Font Mono' style='Extended ExtraBold Italic'
+  font_size 20.0
+  # force_ltr no
+  #: symbol_map U+E0A0-U+E0A3,U+E0C0-U+E0C7 PowerlineSymbols
+  #: symbol_map codepoints Font Family Name
+  #: narrow_symbols U+E0A0-U+E0A3,U+E0C0-U+E0C7 1
+  #: narrow_symbols codepoints [optionally the number of cells]
+  disable_ligatures never
+  #: map alt+1 disable_ligatures_in active always
+  #: map alt+2 disable_ligatures_in all never
+  #: map alt+3 disable_ligatures_in tab cursor
+  #: font_features none
+  #: font_features FiraCode-Retina +zero +onum
+  #: font_features FiraCode-Bold +zero
+  #: font_features TT2020StyleB-Regular -liga +calt
+  #: font_features UnifontMedium +isol -medi -fina -init
+  #: modify_font underline_position -2
+  #: modify_font underline_thickness 150%
+  #: modify_font strikethrough_position 2px
+  #: modify_font cell_width 80%
+  #: modify_font cell_height -2px
+  #: modify_font baseline 3
+  # box_drawing_scale 0.001, 1, 1.5, 2
+  # undercurl_style thin-sparse
+  # text_composition_strategy platform
+  # text_fg_override_threshold 0
+
+
+###################################### cursor ###################################### (see cursor.conf)
+
+
+###################################### scrollback ###################################### (see scrollback.conf)
+
+
+###################################### mouse ###################################### (see mouse.conf)
+
+
+###################################### performance ######################################
+    repaint_delay 2
+    input_delay 0
+    sync_to_monitor no
+
+
+###################################### bell ###################################### (see bell.conf)
+
+
+###################################### windows ######################################
+    remember_window_size  yes
+    # initial_window_width  1280
+    # initial_window_height 1080
+    enabled_layouts fat
+    # window_resize_step_cells 2
+    # window_resize_step_lines 2
+    window_border_width 5
+    draw_minimal_borders yes
+    window_margin_width 0
+    # single_window_margin_width -1
+    window_padding_width 7
+    # single_window_padding_width -1
+    # placement_strategy
+# active_border_color #FF8B19
+# inactive_border_color #353333
+# bell_border_color #58c34c
+    inactive_text_alpha 0.7
+    hide_window_decorations titlebar-only
+    window_logo_path kitty_icon.png
+    window_logo_position bottom-right
+    window_logo_alpha 0.1
+    window_logo_scale 5
+    resize_debounce_time 0.1 0.1
+    # resize_in_steps yes
+    # visual_window_select_characters 1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    # confirm_os_window_close -1
+    window_title_template {kitty.id}
+
+
+###################################### tabs ###################################### (see tabs.conf)
+
+
+###################################### colors ######################################
+    # foreground #dddddd
+    # background #000000
+    background_opacity 1.0
+    background_blur 0
+    # background_image none
+    # background_image_layout tiled
+    # background_image_linear no
+    # transparent_background_colors
+    # dynamic_background_opacity no
+    # background_tint 1.0
+    # background_tint_gaps 1.0
+    dim_opacity 1.0
+    # selection_foreground #000000
+    # selection_background #fffacd
+    # color0 #000000
+    # color8 #767676
+    #: black
+    # color1 #cc0403
+    # color9 #f2201f
+    #: red
+    # color2  #19cb00
+    # color10 #23fd00
+    #: green
+    # color3  #cecb00
+    # color11 #fffd00
+    #: yellow
+    # color4  #0d73cc
+    # color12 #1a8fff
+    #: blue
+    # color5  #cb1ed1
+    # color13 #fd28ff
+    #: magenta
+    # color6  #0dcdcd
+    # color14 #14ffff
+    #: cyan
+    # color7  #dddddd
+    # color15 #ffffff
+    #: white
+    # mark1_foreground black
+    # mark1_background #98d3cb
+    # mark2_foreground black
+    # mark2_background #f2dcd3
+    # mark3_foreground black
+    # mark3_background #f274bc
+
+###################################### macOS ######################################
+# macos_titlebar_color system #232136
+    # macos_option_as_alt no
+    # macos_hide_from_tasks no
+    macos_quit_when_last_window_closed yes
+    macos_window_resizable yes
+    # macos_thicken_font 0
+    # macos_traditional_fullscreen no
+    macos_show_window_title_in menubar
+    # macos_menubar_title_max_length 0
+    macos_custom_beam_cursor yes
+    # macos_colorspace srgb
+
+
+###################################### advanced ###################################### (see advanced.conf)
+
+
+###################################### keybinds ######################################
+    clear_all_shortcuts yes
+    # Clipboard 
+            map cmd+c             copy_to_clipboard
+            map cmd+v             paste_from_clipboard
+            map cmd+s             paste_from_selection
+    # Scrolling 
+            map cmd+k             scroll_line_up
+            map cmd+j             scroll_line_down
+            map cmd+shift+k       scroll_page_up
+            map cmd+shift+j       scroll_page_down
+
+    # Window management 
+            map cmd+enter         new_window
+            map cmd+n             new_os_window
+            map cmd+w             close_window
+            map cmd+]             move_window_forward
+            map cmd+[             move_window_backward
+            map cmd+right         next_window
+            map cmd+left          previous_window
+            map cmd+opt+left      resize_window narrower 3
+            map cmd+opt+right     resize_window wider 3
+            map cmd+opt+up        resize_window taller 3
+            map cmd+opt+down      resize_window shorter 3
+    # Tab management 
+            map cmd+shift+]       next_tab
+            map cmd+shift+[       previous_tab
+            map cmd+shift+enter   new_tab
+            map cmd+shift+w       close_tab
+            map cmd+shift+q       close_os_window
+            map cmd+shift+f       move_tab_forward
+            map cmd+shift+b       move_tab_backward
+    # Miscellaneous 
+            map opt+i             show_kitty_doc overview
+            map opt+c             edit_config_file
+            map opt+backspace     clear_terminal to_cursor active
+            map opt+r             load_config_file
+            map cmd+q             quit
+
+
+# BEGIN_KITTY_THEME
+# H-PUX
+include current-theme.conf
+# END_KITTY_THEME

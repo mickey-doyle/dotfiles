@@ -1,0 +1,209 @@
+### Plugin Directory
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+
+
+### Color Definitions
+source "$PLUGIN_DIR/colors.sh"
+
+
+### Bar Appearance
+bar=(
+    display=main
+    position=top
+    height=30
+    blur_radius=20
+    color=$CLEAR
+    corner_radius=0
+    border_color=$CLEAR
+    border_width=2
+    topmost=window
+    font_smoothing=on
+    shadow=on
+    shadow.distance=4
+    shadow.angle=180
+    shadow.color=$CLEAR
+    margin=0
+    padding_left=0
+    padding_right=15
+    y_offset=37
+)
+sketchybar --bar "${bar[@]}"
+
+
+### Default Settings
+default=(
+    padding_left=0
+    padding_right=0
+    icon.font="ZedMono Nerd Font Propo:Light:26.0"
+    label.font="ZedMono Nerd Font Propo:Bold:26.0"
+    icon.color=$WHITE
+    label.color=$WHITE
+    background.color=$CHAR
+    icon.padding_left=0
+    icon.padding_right=0
+    label.padding_left=3
+    label.padding_right=3
+    background.border_width=1
+    background.border_color=0xff000000
+    background.height=30
+    background.corner_radius=10
+)
+sketchybar --default "${default[@]}"
+
+
+### Space Setup
+# source "/Users/mick/.config/sketchybar/plugins/space_setup.sh"
+# for ((i=1; i<=space_count; i++)); do
+#     sketchybar --set space.$i script="$HOME/.config/sketchybar/plugins/space_update.sh"
+# done
+
+
+### Front App
+#front_app=(
+#    icon.drawing=off
+#    label.font="ZedMono Nerd Font Propo:ExtraBold:28.0"
+#    label.width=dynamic
+#    label.color=$WHITE
+#    label.padding_left=10
+#    label.padding_right=10
+#    label.shadow.drawing=on
+#    label.shadow.distance=3
+#    label.shadow.angle=180
+#    label.shadow.color=$CHAR
+#    background.color=$PURP
+#    background.border_width=1
+#    background.border_color=$WHITE
+#    background.height=32
+#    background.corner_radius=16
+#    background.shadow.drawing=on
+#    background.shadow.distance=4
+#    background.shadow.angle=180
+#    background.shadow.color=$WHITE
+#    script="$PLUGIN_DIR/front_app.sh"
+#)
+#sketchybar --add item front_app center \
+#           --set front_app "${front_app[@]}" \
+#           --subscribe front_app front_app_switched
+
+
+### Time Clock
+time_clock=(
+    update_freq=1
+    script="$PLUGIN_DIR/time_clock.sh"
+    padding_left=15
+    padding_right=0
+    icon.drawing=off
+    label.font="ZedMono Nerd Font Propo:Italic:20.0"
+    label.color=$WHITE
+    label.padding_left=8
+    label.padding_right=8
+    label.shadow.drawing=on
+    label.shadow.distance=2
+    label.shadow.angle=180
+    label.shadow.color=$CLEAR
+    background.color=$CHAR
+    background.border_width=1
+    background.border_color=$GOLD
+    background.height=26
+    background.corner_radius=13
+    background.shadow.drawing=on
+    background.shadow.distance=4
+    background.shadow.angle=180
+    background.shadow.color=$GOLD
+)
+sketchybar --add item time_clock right \
+           --set time_clock "${time_clock[@]}"
+
+
+### Clock
+clock=(
+    update_freq=60
+    script="$PLUGIN_DIR/clock.sh"
+    padding_left=15
+    padding_right=0
+    icon.drawing=off
+    label.font="ZedMono Nerd Font Propo:Italic:20.0"
+    label.color=$WHITE
+    label.padding_left=8
+    label.padding_right=8
+    label.shadow.drawing=on
+    label.shadow.distance=2
+    label.shadow.angle=180
+    label.shadow.color=$CLEAR
+    background.color=$CHAR
+    background.border_width=1
+    background.border_color=$GOLD
+    background.height=26
+    background.corner_radius=13
+    background.shadow.drawing=on
+    background.shadow.distance=4
+    background.shadow.angle=180
+    background.shadow.color=$GOLD
+)
+sketchybar --add item clock right \
+           --set clock "${clock[@]}"
+
+### Battery Monitor
+battery=(
+    script="$PLUGIN_DIR/battery.sh"
+    update_freq=120
+    padding_left=15
+    padding_right=0
+    icon.font="ZedMono Nerd Font Propo:Bold:20.0"
+    icon.color=$GOLD
+    icon.padding_left=8
+    icon.padding_right=4
+    label.font="ZedMono Nerd Font Propo:Italic:20.0"
+    label.color=$WHITE
+    label.padding_left=4
+    label.padding_right=8
+    label.shadow.drawing=on
+    label.shadow.distance=2
+    label.shadow.angle=180
+    label.shadow.color=$CLEAR
+    background.color=$CHAR
+    background.border_width=1
+    background.border_color=$GOLD
+    background.height=26
+    background.corner_radius=13
+    background.shadow.drawing=on
+    background.shadow.distance=4
+    background.shadow.angle=180
+    background.shadow.color=$GOLD
+)
+
+sketchybar --add item battery right \
+           --set battery "${battery[@]}"
+
+
+### Session Duration
+session_duration=(
+    script="$HOME/.config/sketchybar/plugins/session_duration.sh"
+    update_freq=60
+    padding_left=15
+    padding_right=0
+    icon.drawing=off
+    label.font="ZedMono Nerd Font Propo:Italic:20.0"
+    label.color=$WHITE
+    label.padding_left=8
+    label.padding_right=8
+    label.shadow.drawing=on
+    label.shadow.distance=2
+    label.shadow.angle=180
+    label.shadow.color=$CLEAR
+    background.border_width=1
+    background.border_color=$GOLD
+    background.color=$CHAR
+    background.height=26
+    background.corner_radius=13
+    background.shadow.drawing=on
+    background.shadow.distance=4
+    background.shadow.angle=180
+    background.shadow.color=$GOLD
+)
+sketchybar --add item session_duration right \
+           --set session_duration "${session_duration[@]}"
+
+
+### Final Update
+sketchybar --update
